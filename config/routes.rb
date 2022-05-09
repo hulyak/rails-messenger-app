@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "pages#home"
-  get '/bolt' => 'pages#bolt'
   get '/about' => 'pages#about'
+  
+  get '/broadway' => 'broadway#broadway'  # /bolt route points to pages controler's bolt action
+
+  get '/messages' => 'messages#index'
+  # create a new message
+  get '/messages/new' => 'messages#new'
+  post '/messages' => 'messages#new'
 end
